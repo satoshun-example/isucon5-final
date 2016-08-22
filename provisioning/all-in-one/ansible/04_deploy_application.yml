@@ -83,21 +83,28 @@
     - apt: name=supervisor state=present
     - copy: src=../files/supervisor.ruby.conf dest=/etc/supervisor/conf.d/ruby.conf
     - supervisorctl: name=ruby state=present
+      ignore_errors: yes
     - copy: src=../files/supervisor.perl.conf dest=/etc/supervisor/conf.d/perl.conf
     - supervisorctl: name=perl state=present
+      ignore_errors: yes
     - copy: src=../files/supervisor.php.conf dest=/etc/supervisor/conf.d/php.conf
     - supervisorctl: name=php state=present
+      ignore_errors: yes
     - copy: src=../files/supervisor.node.conf dest=/etc/supervisor/conf.d/node.conf
     - supervisorctl: name=node state=present
+      ignore_errors: yes
     - copy: src=../files/supervisor.java.conf dest=/etc/supervisor/conf.d/java.conf
     - supervisorctl: name=java state=present
+      ignore_errors: yes
     - copy: src=../files/supervisor.python.conf dest=/etc/supervisor/conf.d/python.conf
     - supervisorctl: name=python state=present
+      ignore_errors: yes
     - copy: src=../files/supervisor.golang.conf dest=/etc/supervisor/conf.d/golang.conf
     - supervisorctl: name=golang state=present
+      ignore_errors: yes
     - copy: src=../files/supervisor.scala.conf dest=/etc/supervisor/conf.d/scala.conf
     - supervisorctl: name=scala state=present
+      ignore_errors: yes
     - name: default application
       supervisorctl: name=ruby state=restarted
-
-
+      ignore_errors: yes

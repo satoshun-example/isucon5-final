@@ -42,16 +42,24 @@
     # files = /etc/supervisor/conf.d/*.conf
     - copy: src=../files/supervisor.ken.conf dest=/etc/supervisor/conf.d/ken.conf
     - supervisorctl: name=ken state=present
+      ignore_errors: yes
     - supervisorctl: name=ken state=restarted
+      ignore_errors: yes
 
     - copy: src=../files/supervisor.perfect_security.conf dest=/etc/supervisor/conf.d/perfect_security.conf
     - supervisorctl: name=perfect_security state=present
+      ignore_errors: yes
     - supervisorctl: name=perfect_security state=restarted
+      ignore_errors: yes
 
     - copy: src=../files/supervisor.search-name.conf dest=/etc/supervisor/conf.d/search-name.conf
     - supervisorctl: name=search-name state=present
+      ignore_errors: yes
     - supervisorctl: name=search-name state=restarted
+      ignore_errors: yes
 
     - copy: src=../files/supervisor.tenki.conf dest=/etc/supervisor/conf.d/tenki.conf
     - supervisorctl: name=tenki state=present
+      ignore_errors: yes
     - supervisorctl: name=tenki state=restarted
+      ignore_errors: yes

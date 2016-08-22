@@ -28,8 +28,12 @@
     - name: ruby agent 1
       copy: src=../files/supervisor.agent1.conf dest=/etc/supervisor/conf.d/agent1.conf owner=root mode=644
     - supervisorctl: name=agent1 state=present
+      ignore_errors: yes
     - supervisorctl: name=agent1 state=restarted
+      ignore_errors: yes
     - name: ruby agent 2
       copy: src=../files/supervisor.agent2.conf dest=/etc/supervisor/conf.d/agent2.conf owner=root mode=644
     - supervisorctl: name=agent2 state=present
+      ignore_errors: yes
     - supervisorctl: name=agent2 state=restarted
+      ignore_errors: yes

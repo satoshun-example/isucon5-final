@@ -24,4 +24,6 @@
     - name: ruby eventapp unicorn
       copy: src=../files/supervisor.eventapp.conf dest=/etc/supervisor/conf.d/eventapp.conf owner=root mode=644
     - supervisorctl: name=eventapp state=present
+      ignore_errors: yes
     - supervisorctl: name=eventapp state=restarted
+      ignore_errors: yes
